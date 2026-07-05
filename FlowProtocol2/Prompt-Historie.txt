@@ -168,3 +168,9 @@ als Member-Variable zu verwalten und nur dann neu zu instanziieren, wenn sich de
 String expandedExpression gegenüber dem letzten Aufruf geändert hat.
 Wenn zu zustimmst, setze diesen Vorschlag um.
 
+----------------------------------------------------------------------------------------
+2026-07-05_FlowProtocoll-MarkDown
+Erstelle eine Markdown-Datei mit einer Beschreibung der FlowProtocol-2-Skriptsprache, 
+die zukünftig als Grundlage für die KI-basierte Erzeugung von FlowProtocol-Skripten verwendet werden kann.
+Orientiere dich an den Skripten aus den Ordnern FP2-Tutorial und Doku-Beispiele und an den Klassen im Ordner Commands,
+mit denen die einzelnen Befehle implementiert sind.
