@@ -103,7 +103,7 @@
                     @if (!string.IsNullOrEmpty(tarea.UploadFilter))
                     {
                         <div style="margin-bottom: 10px; margin-top: 5px;">
-                            <button type="button" class="btn btn-secondary btn-sm" onclick="UploadFileFunction('@inidx.Key', '@tarea.UploadFilter', @Html.Raw(string.IsNullOrEmpty(tarea.ReadRegEx) ? "null" : $"'{tarea.ReadRegEx.Replace("'", "\\'")}'"))">Aus Datei einfügen</button>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="UploadFileFunction('@inidx.Key', '@tarea.UploadFilter', @Html.Raw(string.IsNullOrEmpty(tarea.ReadRegEx) ? "null" : $"'{tarea.ReadRegEx.Replace("'", "\\'")}'"))">Aus Datei anfügen</button>
                         </div>
                     }
                 </div>
@@ -201,17 +201,20 @@
                     }
                 }
                 
-                if (contentToInsert.length > maxLength) {
-                    contentToInsert = contentToInsert.substring(0, maxLength);
+                const textarea = document.getElementById(textareaID);
+                const existingValue = textarea.value || '';
+                const newline = existingValue.length > 0 && !existingValue.endsWith('\n') ? '\n' : '';
+                const availableSpace = Math.max(0, maxLength - existingValue.length - newline.length);
+                if (contentToInsert.length > availableSpace) {
+                    contentToInsert = contentToInsert.substring(0, availableSpace);
                     wasTruncated = true;
                 }
                 
-                // Setze den Text im Textarea
-                const textarea = document.getElementById(textareaID);
-                textarea.value = contentToInsert;
+                // Hänge die Datei an vorhandenen Text an.
+                textarea.value = existingValue + newline + contentToInsert;
                 
                 if (wasTruncated) {
-                    alert(`Hinweis: Der Inhalt der Datei ist zu lang und wurde bei ${maxLength} Zeichen abgeschnitten.`);
+                    alert(`Hinweis: Der gesamte Text ist zu lang und wurde auf ${maxLength} Zeichen begrenzt.`);
                 }
             } catch (err) {
                 console.error('Fehler beim Verarbeiten der Datei:', err);

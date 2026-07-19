@@ -174,3 +174,13 @@ Erstelle eine Markdown-Datei mit einer Beschreibung der FlowProtocol-2-Skriptspr
 die zukünftig als Grundlage für die KI-basierte Erzeugung von FlowProtocol-Skripten verwendet werden kann.
 Orientiere dich an den Skripten aus den Ordnern FP2-Tutorial und Doku-Beispiele und an den Klassen im Ordner Commands,
 mit denen die einzelnen Befehle implementiert sind.
+
+----------------------------------------------------------------------------------------
+2026-07-19_Dateiinhalt anfügen
+Die Option UploadFilter in FlowProtocol2\Commands\CmdMultiLineInput.cs führt aktuell
+zu einer Schaltfläche "Aus Datei einfügen" mit entsprechendem Verhalten.
+Wandle diese Funktion um in eine Funktion "Aus Datei anfügen", 
+die den Inhalt der ausgewählten Datei an den schon eingegebenen Text anfügt.
+Ist schon eingegebener Text vorhanden, soll zuvor ein Zeilenumbruch angefügt werden.
+Die Längenbegrenzung bleibt bestehen, die gilt für den gesamten Text.
+Die ReadRegEx-Option wird weiterhin umgesetzt.
