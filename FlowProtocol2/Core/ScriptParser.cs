@@ -20,6 +20,7 @@ namespace FlowProtocol2.Core
             CmdParser.Add(CmdSet.GetComandParser());            
             CmdParser.Add(CmdOptionGroup.GetComandParser());
             CmdParser.Add(CmdOptionValue.GetComandParser());
+            CmdParser.Add(CmdMultiLineInput.GetComandParser());
             CmdParser.Add(CmdExecute.GetComandParser());
             CmdParser.Add(CmdAddHelpLine.GetComandParser());
             CmdParser.Add(CmdAddHelpLink.GetComandParser());
@@ -70,6 +71,7 @@ namespace FlowProtocol2.Core
             CmdParser.Add(CmdDateAdd.GetComandParser());
             CmdParser.Add(CmdDateFormat.GetComandParser());
             CmdParser.Add(CmdDateDiff.GetComandParser());
+            CmdParser.Add(CmdNumFormat.GetComandParser());
             CmdParser.Add(CmdSetCulture.GetComandParser());
             CmdParser.Add(CmdDynamicOptionGroup.GetComandParser());
             CmdParser.Add(CmdSetBlockSaveFile.GetComandParser());
@@ -77,8 +79,7 @@ namespace FlowProtocol2.Core
             CmdParser.Add(CmdToLower.GetComandParser());
             CmdParser.Add(CmdFileExists.GetComandParser());
             CmdParser.Add(CmdListFiles.GetComandParser());
-            CmdParser.Add(CmdListDirectories.GetComandParser());
-            CmdParser.Add(CmdMultiLineInput.GetComandParser());
+            CmdParser.Add(CmdListDirectories.GetComandParser());            
             CmdParser.Add(CmdEncryptText.GetComandParser());
             CmdParser.Add(CmdDecryptText.GetComandParser());
             CmdParser.Add(CmdExitLoop.GetComandParser());

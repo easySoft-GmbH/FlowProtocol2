@@ -184,3 +184,9 @@ die den Inhalt der ausgewählten Datei an den schon eingegebenen Text anfügt.
 Ist schon eingegebener Text vorhanden, soll zuvor ein Zeilenumbruch angefügt werden.
 Die Längenbegrenzung bleibt bestehen, die gilt für den gesamten Text.
 Die ReadRegEx-Option wird weiterhin umgesetzt.
+
+----------------------------------------------------------------------------------------
+2026-08-15_NumFormat
+Implementiere die Run-Methode der schon vorbereiteten CmdNumFormat-Klasse aus.
+Orientiere dich dabei an der CmdDateFormat-Klasse
+verwende folgende Variablen: expandedVarName, resultNumber, expandedFormat

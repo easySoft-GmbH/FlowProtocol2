@@ -334,7 +334,7 @@
 @Buch erweitern >> ch_13_befehlsreferenz.tex öffnen
 	>|D:\Entwicklung\MSanGitDev\FlowProtocol2\Doc\ch_13_befehlsreferenz.tex
 @Buch erweitern >> Zu Abschnitt Befehle gehen
-		>|\subsection{Befehle}\label{Befehle}
+		>|\section{Befehle}\label{Befehle}
 @Buch erweitern >> An der für 
 	~AddCode  ~$CommandName
 	~AddText  alphabetisch richtigen Stelle einfügen:
