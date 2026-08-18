@@ -1,0 +1,72 @@
+﻿CmdOutputText|1334|^(@[^>]*)?>(>|\.)?([_\*\#\|\s]?)(.*)
+CmdSet|198|^~Set ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdAddText|155|^~AddText (.*)
+CmdAddCode|148|^~AddCode (.*)
+CmdOptionGroup|88|^\?([A-Za-z0-9\$\(\)]*'?):(.*)
+CmdSetTitle|87|^~SetTitle (.*)
+CmdLoop|87|^~Loop
+CmdInputText|76|^~Input ([A-Za-z0-9\$\(\)]*):(.*)
+CmdReplace|50|^~Replace ([A-Za-z0-9\$\(\)]*)\s*=(.*)\|(.*)->(.*)
+CmdDoWhile|46|^~DoWhile\s+(.*)
+CmdIf|38|^~If (.*)
+CmdForEach|32|^~ForEach\s+([A-Za-z0-9\$\(\)]+)\s+in\s+([A-Za-z0-9\$\(\)]+)
+CmdExecute|29|^~Execute
+CmdDefineSub|26|^~DefineSub ([A-Za-z0-9]*)
+CmdSplit|26|^~Split\s+([A-Za-z0-9\$\(\)]*)\s*=([^|]*)\|(.*)
+CmdReturn|26|^~Return
+CmdAddLink|24|^~AddLink\s+(.*)\|(.*)
+CmdAddHelpLine|23|^(&>|~AddHelpLine)(.*)
+CmdGoSub|19|^~GoSub\s+([A-Za-z0-9]+)(\s*;\s*BaseKey\s*=\s*([A-Za-z0-9\$\(\)]+))?
+CmdCalculateExpression|15|^~CalculateExpression ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdMoveSection|15|^~MoveSection (.*)\s*->\s*(.*)
+CmdEnd|12|^~End
+CmdSetDateTime|12|^~SetDateTime\s+([A-Za-z0-9\$\(\)]+)\s*=(.*)
+CmdElse|12|^~Else
+CmdSetInputSection|11|^~SetInputSection (.*)
+CmdSetInputDescription|10|^~SetInputDescription (.*)
+CmdSetStopCounter|9|^~SetStopCounter\s+([A-Za-z0-9\$\(\)]+)\s*;\s*([A-Za-z0-9\$\(\)]+)(\s*;\s*MaxLength\s*=\s*([A-Za-z0-9\$\(\)]+))?
+CmdJumpMark|9|^~JumpMark ([A-Za-z0-9]*)
+CmdSetInputTitle|9|^~SetInputTitle (.*)
+CmdCalculate|8|^~Calculate ([A-Za-z0-9\$\(\)]*)\s*=\s*(-?[A-Za-z0-9\$\(\)\.\,]*)\s*([\+\-\*/\%])\s*(-?[A-Za-z0-9\$\(\)\.\,]*)
+CmdRegExMatch|8|^~RegExMatch ([A-Za-z0-9\$\(\)]*)\s*=([^\|]*)\|(.*)
+CmdInclude|7|^~Include\s+([^;]*)(\s*;\s*BaseKey\s*=\s*([A-Za-z0-9\$\(\)]+))?
+CmdUrlEncode|7|^~UrlEncode ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdRandom|7|^~Random ([A-Za-z0-9\$\(\)]*)\s*=\s*(-?[A-Za-z0-9\$\(\)]*)\s*..\s*(-?[A-Za-z0-9\$\(\)]*)
+CmdElseIf|7|^~ElseIf (.*)
+CmdCamelCase|7|^~CamelCase\s+([A-Za-z0-9\$\(\)]+)\s*=\s*(.*)
+CmdDynamicOptionGroup|7|^~DynamicOptionGroup ([A-Za-z0-9\$\(\)]*'?):\s*([A-Za-z0-9\$\(\)]*)\s*;(.*)
+CmdForEachLine|6|^~ForEachLine\s+([A-Za-z0-9\$\(\)]+)\s+in\s+([^;]*)(\s*;\s*Take\s*=\s*(-?[A-Za-z0-9\$\(\)]+))?(\s*;\s*IndexVar\s*=\s*([A-Za-z0-9\$\(\)]+))?(\s*;\s*SectionVar\s*=\s*([A-Za-z0-9\$\(\)]+))?(\s*;\s*(NoFormat))?
+CmdToLower|5|^~ToLower ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdRegExReplace|5|^~RegExReplace ([A-Za-z0-9\$\(\)]*)\s*=(.*)\|(.*)->(.*)
+CmdSetSection|5|^~SetSection (.*)
+CmdListFiles|5|^~ListFiles ([A-Za-z0-9\$\(\)]*)\s*=([^;]*)(\s*;\s*Pattern=(.*))?
+CmdDateSet|5|^~DateSet ([A-Za-z0-9\$\(\)]*)\s*=\s*([A-Za-z0-9\$\(\)\.\-\/]*)\s*\|\s*([A-Za-z0-9\$\(\)\.\-\/]*)
+CmdClearVar|5|^~ClearVar ([A-Za-z0-9\$\(\)]*[\*]?)
+CmdDateFormat|4|^~DateFormat ([A-Za-z0-9\$\(\)]*)\s*=\s*([A-Za-z0-9\$\(\)\.\-\/]*)\s*\|\s*(.*)
+CmdGoTo|4|^~GoTo\s+([A-Za-z0-9\$\(\)]+)
+CmdSetCulture|4|^~SetCulture ([A-Za-z0-9\$\(\)\-]*)
+CmdEvalExpression|4|^~EvalExpression ([A-Za-z0-9\$\(\)]*)\s*(!?)=(.*)
+CmdListDirectories|4|^~ListDirectories ([A-Za-z0-9\$\(\)]*)\s*=([^;]*)(\s*;\s*Pattern=(.*))?
+CmdMultiLineInput|3|^~MultiLineInput\s+([A-Za-z0-9\$\(\)]*'?):\s*([^;]*)(\s*;\s*ShowLines\s*=\s*(-?[A-Za-z0-9\$\(\)]+))?(\s*;\s*UploadFilter\s*=\s*([^;]*))?(\s*;\s*ReadRegEx\s*=\s*([^;]*))?
+CmdRound|3|^~Round\s+([A-Za-z0-9\$\(\)]+)\s*=\s*([^|]+)\|([A-Za-z0-9\$\(\)]+)
+CmdSort|3|^~Sort ([A-Za-z0-9\$\(\)]*)(\s*->\s*([A-Za-z0-9\$\(\)]*))?(\s*;\s*ValueType=([A-Za-z0-9\$\(\)]+))?
+CmdAddHelpText|3|^~AddHelpText (.*)
+CmdTrim|3|^~Trim ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdFor|3|^~For\s+([A-Za-z0-9\$\(\)]+)\s*=\s*(-?[A-Za-z0-9\$\(\)]+)\s*To\s*(-?[A-Za-z0-9\$\(\)]+)(\s+Step\s*(-?[A-Za-z0-9\$\(\)]+))?
+CmdToUpper|2|^~ToUpper ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdXmlEncode|2|^~XmlEncode ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdFileExists|2|^~FileExists ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdOptionValue|2|^#([A-Za-z0-9]*)\s*:(.*)
+CmdAddTo|2|^~AddTo ([A-Za-z0-9\$\(\)]*)\s*\+=\s*(-?[A-Za-z0-9\$\(\)]*)
+CmdDateDiff|1|^~DateDiff ([A-Za-z0-9\$\(\)]*)\s*=\s*([A-Za-z0-9\$\(\)\.\-\/: ]*)\s*\.\.\s*([A-Za-z0-9\$\(\)\.\-\/: ]*)\s*\|\s*([A-Za-z0-9\$\(\)]*)
+CmdAddNewKey|1|^~AddNewKey\s+([A-Za-z0-9\$\(\)]+)\s*=\s*(.*)
+CmdNumFormat|1|^~NumFormat\s+([A-Za-z0-9\$\(\)]+)\s*=\s*(-?[A-Za-z0-9\$\(\)\.\,]+)\s*\|\s*(.+)
+CmdDateAdd|1|^~DateAdd ([A-Za-z0-9\$\(\)]*)\s*=\s*([A-Za-z0-9\$\(\)\.\-\/: ]*)\s*\|\s*(-?[A-Za-z0-9\$\(\)]*)\s*\|\s*([A-Za-z0-9\$\(\)]*)
+CmdAddToList|1|^~AddToList\s+([A-Za-z0-9\$\(\)]+)\s*\+=\s*(.*)
+CmdEncryptText|1|^~EncryptText ([A-Za-z0-9\$\(\)]*)\s*=([^|]*)\s*\|\s*(.*)
+CmdAddHelpLink|1|^~AddHelpLink\s+(.*)\|(.*)
+CmdEndParagraph|1|^~EndParagraph
+CmdDecryptText|1|^~DecryptText ([A-Za-z0-9\$\(\)]*)\s*=([^|]*)\s*\|\s*(.*)
+CmdSetBlockSaveFile|0|^~SetBlockSaveFile\s+([^;]*)(\s*;\s*Encoding\s*=\s*([^;]*))?
+CmdImplies|0|^~Implies ([A-Za-z0-9\$\(\)]*)\s*=(.*)
+CmdExitLoop|0|^~ExitLoop
