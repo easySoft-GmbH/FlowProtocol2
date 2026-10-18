@@ -1,0 +1,163 @@
+~SetInputDescription Hilft bei der Erstellung eines neuen Buches
+~Input TitelLang: Titel (lang)
+~Input SubTitel: Untertitel (z.B. "2. Auflage")
+~GoSub Ersetzungen; BaseKey=SubTitel
+~Input TitelKurz: Titel (kurz)
+~Input Pfad: Ordnerpfad
+~MultiLineInput Kaps: Kapitel (in Zeilen getrennt)
+~Execute
+~Set Autor=Wolfgang Maier
+~CamelCase DatName=$TitelKurz
+~SetDateTime RelDat=MMMM yyyy
+~Split Chapters=$Kaps|$CRLF
+
+@Anleitung >> Hauptdatei anlegen:
+	> Nachfolgenden Text in Zwischenablage nehmen
+		>.|\documentclass[10pt, parskip=half, twoside]{scrbook}
+		>.|\usepackage[german]{babel}
+		>.|\usepackage[T1]{fontenc}
+		>.|\usepackage[utf8]{inputenc}
+		>.|\usepackage{scrlayer-scrpage}
+		>.|\usepackage{libertinus}
+		>.|\usepackage{microtype}
+		>.|\usepackage{inconsolata}
+		>.|\usepackage{graphicx}
+		>.|\usepackage{makeidx}
+		>.|\usepackage{amsmath, amssymb}
+		>.|\usepackage{theorem}
+		>.|\title{$TitelLang}
+		>.|\author{$Autor}
+		>.|%%
+		>.|%% LaTeX Template for Books: Essential Guide for Self-Publishers
+		>.|%% https://www.lode.de/blog/latex-template-for-books-essential-guide-for-self-publishers
+		>.|%%
+		>.|\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+		>.|\renewcommand{\subsectionmark}[1]{\markleft{\thesubsection\ #1}}
+		>.|\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+		>.|%%
+		>.|%% Seitenränder statt \usepackage[paperwidth=170mm, paperheight=220mm, top=25mm, bottom=25mm, inner=25mm, outer=20mm]{geometry}
+		>.|\KOMAoptions{
+		>.|  paper=170mm:220mm,
+		>.|  DIV=12,
+		>.|  BCOR=8mm
+		>.|}
+		>.|%%
+		>.|%% scrlayer-scrpage-Einstellungen
+		>.|%%
+		>.|\clearpairofpagestyles
+		>.|\renewcommand*{\headfont}{\normalfont}
+		>.|\ihead{\headmark}
+		>.|\ohead{\pagemark}
+		>.|\setheadsepline{0.4pt}
+		>.|\pagestyle{scrheadings}
+		>.|\renewcommand*{\chapterpagestyle}{plain}
+		>.|%%
+		>.|%% Variablen
+		>.|%%
+		>.|\newcommand{\booktitle}{$TitelLang}
+		>.|\newcommand{\booksubtitle}{$SubTitel}
+		>.|\newcommand{\authorname}{$Autor}
+		>.|\newcommand{\releasedate}{$RelDat}
+		>.|\newcommand{\isbn}{000-0-000000-00-0}
+		>.|%%
+		>.|%% Befehle
+		>.|%%
+		>.|\newcommand{\FPZ}{\textit{Flow\-Proto\-col 2}}
+		>.|\newcommand{\FPZb}{\textit{Flow\-Proto\-col-2}}
+		>.|\newcommand{\fcmd}[1]{\texttt{\textasciitilde #1}\index{#1@\texttt{\textasciitilde #1}}}
+		>.|\newcommand{\cidxvar}[1]{\texttt{\$#1}\index{#1@\texttt{\$#1}}}
+		>.|\newcommand{\cidxfrag}[1]{\texttt{#1}\index{#1@\texttt{#1}}}
+		>.|\newcounter{bspcount}
+		>.|\newcommand{\Beispiel}[1]{\refstepcounter{bspcount}\subsubsection*{Beispiel~\arabic{bspcount} -- #1}\vspace*{-1.5ex}}
+		>.|\newcommand{\synvar}[1]{\ensuremath{\langle\text{#1}\rangle}}
+		>.|\theorembodyfont{\rmfamily}
+		>.|\newtheorem{basisformat}{Basisformat}[chapter]
+		>.|
+		>.|\makeindex
+		>.|\begin{document}
+		>.|\frontmatter
+		>.|
+		>.|%-------------------------
+		>.|% Schmutztitel (rechts)
+		>.|%-------------------------
+		>.|\begin{titlepage}
+		>.|\thispagestyle{empty}
+		>.|\vspace*{\fill}
+		>.|\begin{center}   
+		>.|    \sffamily
+		>.|   {\Large $TitelLang}
+		>.|\end{center}
+		>.|\vspace*{\fill}
+		>.|\end{titlepage}
+		>.|\newpage
+		>.|
+		>.|%-------------------------
+		>.|% Frontispiz (links)
+		>.|%-------------------------
+		>.|\thispagestyle{empty}
+		>.|\null
+		>.|\newpage
+		>.|
+		>.|%-------------------------
+		>.|% Titelblatt (rechts)
+		>.|%-------------------------
+		>.|\begin{titlepage}
+		>.|    \thispagestyle{empty}
+		>.|    \vspace*{\fill}
+		>.|    \begin{center}
+		>.|       {\Huge\sffamily $TitelLang}\\[1cm]
+		>.|   {\Large\sffamily\booksubtitle}\\[0.7cm]
+		>.|   {\Large\authorname}\\[0.3cm]
+		>.|   {\large\releasedate }\\[0.8cm]
+		>.|   %\includegraphics[width=0.5\textwidth]{FlowLogoHigh}
+		>.|    \end{center}
+		>.|    \vspace*{\fill}
+		>.|\end{titlepage}
+		>.|\newpage
+		>.|
+		>.|%-------------------------
+		>.|% Impressum (links)
+		>.|%-------------------------
+		>.|\thispagestyle{empty}
+		>.|\vspace*{\fill}
+		>.|{\small
+		>.|\noindent
+		>.|\copyright~\the\year~\authorname\\[1em]
+		>.|Druck: Libri Plureos GmbH, Friedensallee 273, 22763 Hamburg\\[1em]
+		>.|Alle Rechte vorbehalten
+		>.|ISBN: \isbn
+		>.|}
+		>.|\vspace*{2cm}
+		>.|\newpage
+		>.|
+		>.|\tableofcontents
+		>.|\mainmatter
+		>.|
+		>.|%-------------------------
+		>.|% Ab hier: Buchtext
+		>.|%-------------------------
+		>.|\setcounter{page}{1}
+~Set chCount=0
+~ForEach chidx in Chapters
+	~AddTo chCount+=1
+	~CamelCase cchidx=$chidx	
+	@Anleitung >.|\include{ch_$chCount_$cchidx}
+	@Kapitel >> Datei für Kapitel $chCount anlegen:
+		> Nachfolgenden Text in Zwischenablage nehmen
+			>.|%% $TitelLang
+			>.|%% Kapitel $chCount: $chidx
+			>.|%% Datei: ch_$chCount_$cchidx.tex
+			>.|
+			~SetBlockSaveFile $Pfad\ch_$chCount_$cchidx.tex; Encoding=utf-8	
+	> und speichern unter
+		>.|$Pfad\ch_$chCount_$cchidx.tex
+~Loop
+	@Anleitung >.|\printindex
+		>.|\end{document}
+		~SetBlockSaveFile $Pfad\$DatName.tex; Encoding=utf-8
+	> und speichern unter
+		>.|$Pfad\$DatName.tex
+~MoveSection Kapitel->Anleitung
+~DefineSub Ersetzungen
+	~Replace $BaseKey=$$BaseKey|. Auflage->.\ Auf\-lage
+~Return
