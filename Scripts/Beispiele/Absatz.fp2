@@ -1,0 +1,8 @@
+@Ausgabe >>_ Zeile 1
+@Ausgabe >>_ Zeile 2
+~EndParagraph
+@Ausgabe >>_ Zeile 3 (nach Absatz)
+	># Aufzählungspunkt 1
+	># Aufzählungspunkt 2
+	~EndParagraph
+	># Aufzählungspunkt 3 (nach Absatz)
