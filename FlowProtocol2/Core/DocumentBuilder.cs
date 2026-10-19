@@ -79,7 +79,7 @@ namespace FlowProtocol2.Core
             }
             else if (l == Level.Level2 && lastBlock != null)
             {                                                 
-                if (lastTextline != null && (lastSubblock == null || lastSubblock.BlockType != t))
+                if (lastTextline != null && (lastSubblock == null || lastSubblock.BlockType != t || lastSubblock.Closed))
                 {
                     lastSubblock = new OMTextBlock();
                     lastSubblock.ID = "B" + (++IDCounter).ToString();
@@ -96,7 +96,7 @@ namespace FlowProtocol2.Core
             }
             else if (l == Level.Level3 && lastSubblock != null)
             {
-                if (lastSubtextline != null && (lastSubsubblock == null || lastSubsubblock.BlockType != t))
+                if (lastSubtextline != null && (lastSubsubblock == null || lastSubsubblock.BlockType != t || lastSubsubblock.Closed))
                 {
                     lastSubsubblock = new OMTextBlock();
                     lastSubsubblock.ID = "B" + (++IDCounter).ToString();

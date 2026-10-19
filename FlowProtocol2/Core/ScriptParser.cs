@@ -37,8 +37,7 @@ namespace FlowProtocol2.Core
             CmdParser.Add(CmdAddHelpLine.GetComandParser());
             CmdParser.Add(CmdGoSub.GetComandParser());
             CmdParser.Add(CmdCalculateExpression.GetComandParser());
-            CmdParser.Add(CmdMoveSection.GetComandParser());
-            CmdParser.Add(CmdEnd.GetComandParser());
+            CmdParser.Add(CmdMoveSection.GetComandParser());            
             CmdParser.Add(CmdSetDateTime.GetComandParser());
             CmdParser.Add(CmdElseIf.GetComandParser());
             CmdParser.Add(CmdElse.GetComandParser());
@@ -83,6 +82,7 @@ namespace FlowProtocol2.Core
             CmdParser.Add(CmdEncryptText.GetComandParser());
             CmdParser.Add(CmdAddHelpLink.GetComandParser());
             CmdParser.Add(CmdEndParagraph.GetComandParser());
+            CmdParser.Add(CmdEnd.GetComandParser());
             CmdParser.Add(CmdDecryptText.GetComandParser());
             CmdParser.Add(CmdSetBlockSaveFile.GetComandParser());
             CmdParser.Add(CmdImplies.GetComandParser());

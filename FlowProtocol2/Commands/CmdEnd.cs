@@ -11,7 +11,7 @@ namespace FlowProtocol2.Commands
 
         public static CommandParser GetComandParser()
         {
-            return new CommandParser(@"^~End", (rc, m) => CreateEndCommand(rc, m));
+            return new CommandParser(@"^~End$", (rc, m) => CreateEndCommand(rc, m));
         }
 
         private static CmdBaseCommand CreateEndCommand(ReadContext rc, Match m)
